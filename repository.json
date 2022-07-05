@@ -1,0 +1,22 @@
+{
+    "$schema": "https://gitlab.com/kicad/code/kicad/-/raw/master/kicad/pcm/schemas/pcm.v1.schema.json#/definitions/Repository",
+    "maintainer": {
+        "contact": {
+            "web": "https://www.kicad.org/about/contact-us/"
+        },
+        "name": "uCrew CMS"
+    },
+    "name": "uCrew Plugins Repository",
+    "packages": {
+        "sha256": "0a630e9f445f8e8ef1f19024f886ca64436392590d8c0496218cf36a0cbcd7fe",
+        "update_time_utc": "2022-07-02 11:02:00",
+        "update_timestamp": 1656759720,
+        "url": "https://gitlab.com/kicad/addons/repository/-/raw/main/packages.json"
+    },
+    "resources": {
+        "sha256": "4414246566f674e1fdbe64998256c65f263bf1ecbd0ae9d99baadc832e715ca2",
+        "update_time_utc": "2022-07-02 11:01:59",
+        "update_timestamp": 1656759719,
+        "url": "https://gitlab.com/kicad/addons/repository/-/jobs/artifacts/main/raw/artifacts/resources.zip?job=update"
+    }
+}
