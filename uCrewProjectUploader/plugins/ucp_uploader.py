@@ -1,5 +1,4 @@
-import pcbnew
-import os
+import pcbnew, os, sys, json
 
 class uCrewProjectsUploader(pcbnew.ActionPlugin):
     def defaults(self):
@@ -12,3 +11,6 @@ class uCrewProjectsUploader(pcbnew.ActionPlugin):
     def Run(self):
         # The entry function of the plugin that is executed on user action
         print("Hello World")
+
+    def showAthorization(self):
+        pass

@@ -8,15 +8,15 @@
     },
     "name": "uCrew Plugins Repository",
     "packages": {
-        "sha256": "65f3097fdaee0a0cf5b8da1fc1d1f66cfe3b958cb37003e380c5d41defdb6325",
-        "update_time_utc": "2022-07-05 13:09:40",
-        "update_timestamp": 1651910980,
+        "sha256": "65dbaf17aaa2d28cdb215fa7446e68dcf5f77dc5efd7c39db05b26062376e76c",
+        "update_time_utc": "2022-07-05 21:36:02",
+        "update_timestamp": 1651941362,
         "url": "http://94.51.83.132/uc_temporary/uCrewKiCadPlugins/packages.json"
     },
     "resources": {
-        "sha256": "9dbed4ec2a34ba9cfb626c32f2f804a9d3abe93cc5469a94267862325ce90ca1",
-        "update_time_utc": "2022-07-05 09:57:21",
-        "update_timestamp": 1651899441,
+        "sha256": "c7afae436f162aad2864d7b06f12622625dc13c3c40e0ea9e9fd98d737b399b8",
+        "update_time_utc": "2022-07-05 18:21:52",
+        "update_timestamp": 1651929712,
         "url": "http://94.51.83.132/uc_temporary/uCrewKiCadPlugins/resources.zip"
     }
 }
