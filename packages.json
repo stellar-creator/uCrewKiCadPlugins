@@ -1,24 +1,24 @@
 {
     "packages": [
         {
-            "$schema": "https://go.kicad.org/pcm/schemas/v1",
-            "author": {
-                "contact": {
-                    "email": "ucrew@local"
-                },
-                "name": "Pavel"
-            },
             "description": "This plugin allows you to upload your project to the uCrewProject server",
-            "description_full": "Plugin for upload your project to uCrewProjects module.",
-            "identifier": "local.stellar-creator.ucrewprojectsuploader",
-            "license": "MIT",
-            "name": "uCrewProjects Uploader",
-            "resources": {
-                "Demos": "https://openscopeproject.org/InteractiveHtmlBomDemo/",
-                "Forum": "https://forum.kicad.info/t/interactive-html-bom-plugin-for-kicad-5-0/11713",
-                "Github": "https://github.com/openscopeproject/InteractiveHtmlBom",
-                "Wiki": "https://github.com/openscopeproject/InteractiveHtmlBom/wiki"
-            },
+            "license": "GPL",
+            "versions": [
+                {
+                    "status": "stable",
+                    "download_size": 4624,
+                    "download_sha256": "c6e2702e03d554827a8c230c09aabb8824eb38fc5667ce32269a61c29acb5e48",
+                    "install_size": 4388,
+                    "download_url": "https://raw.githubusercontent.com/stellar-creator/uCrewKiCadPlugins/main/uCrewProjectUploader/latests.zip",
+                    "platforms": [
+                        "linux",
+                        "macos",
+                        "windows"
+                    ],
+                    "version": "0.0.1",
+                    "kicad_version": "6.0"
+                }
+            ],
             "tags": [
                 "upload",
                 "pcbnew",
@@ -26,23 +26,21 @@
                 "database",
                 "documentation"
             ],
+            "description_full": "Plugin for upload your project to uCrewProjects module.",
+            "author": {
+                "contact": {
+                    "email": "ucrew@local"
+                },
+                "name": "Pavel"
+            },
+            "$schema": "https://go.kicad.org/pcm/schemas/v1",
+            "identifier": "local.stellar-creator.ucrewprojectsuploader",
             "type": "plugin",
-            "versions": [
-                {
-                    "download_sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
-                    "download_size": 5,
-                    "download_url": "https://raw.githubusercontent.com/stellar-creator/uCrewKiCadPlugins/main/uCrewProjectUploader/latests.zip",
-                    "install_size": 5,
-                    "kicad_version": "5.1",
-                    "platforms": [
-                        "linux",
-                        "macos",
-                        "windows"
-                    ],
-                    "status": "stable",
-                    "version": "2.5.0"
-                }
-            ]
+            "resources": {
+                "Wiki": "https://github.com/stellar-creator/uCrew/wiki",
+                "Github": "https://github.com/stellar-creator/uCrew"
+            },
+            "name": "uCrewProjects Uploader"
         }
     ]
 }

@@ -1,0 +1,46 @@
+{
+    "packages": [
+        {
+            "description": "This plugin allows you to upload your project to the uCrewProject server", 
+            "license": "MIT", 
+            "author": {
+                "contact": {
+                    "email": "ucrew@local"
+                }, 
+                "name": "Pavel"
+            }, 
+            "tags": [
+                "upload", 
+                "pcbnew", 
+                "html", 
+                "database", 
+                "documentation"
+            ], 
+            "versions": [
+                {
+                    "status": "stable", 
+                    "download_size": 22, 
+                    "version": "0.0.1", 
+                    "download_sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85", 
+                    "download_url": "https://raw.githubusercontent.com/stellar-creator/uCrewKiCadPlugins/main/uCrewProjectUploader/latests.zip", 
+                    "platforms": [
+                        "linux", 
+                        "macos", 
+                        "windows"
+                    ], 
+                    "install_size": 5, 
+                    "kicad_version": "6.0"
+                }
+            ], 
+            "resources": {
+                "Wiki": "https://github.com/stellar-creator/uCrew/wiki", 
+                "Github": "https://github.com/stellar-creator/uCrew"
+            }, 
+            "$schema": "https://go.kicad.org/pcm/schemas/v1", 
+            "identifier": "local.stellar-creator.ucrewprojectsuploader", 
+            "type": "plugin", 
+            "description_full": "Plugin for upload your project to uCrewProjects module.", 
+            "name": "uCrewProjects Uploader"
+        }
+    ]
+}
