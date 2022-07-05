@@ -9,8 +9,8 @@
                 "name": "Pavel"
             },
             "description": "This plugin allows you to upload your project to the uCrewProject server",
-            "description_full": "This plugin generates convenient BOM listing with ability to visually correlate and easily search for components and their placements on the pcb.\nThis is really useful when hand soldering your prototype and you have to find 50 places where 0.1uF cap should be or which of the SOP8 footprints are for the same micro. Dynamically highlighting all components in the same group on the rendering of the pcb makes manually populating the board much easier.\nThis plugin utilizes Pcbnew python bindings to read pcb data and render silkscreen, fab layer, footprint pads, text and drawings. Additionally it can pull data from schematic if you export it through netlist or xml file that Eeschema can generate from it's internal bom tool. That extra data can be added as additional columns in the BOM table (for example manufacturer id) or it can be used to indicate which components should be omitted altogether (dnp field).\nGenerated html page is fully self contained, doesn't need internet connection to work and can be packaged with documentation of your project or hosted anywhere on the web.",
-            "identifier": "org.openscopeproject.InteractiveHtmlBom",
+            "description_full": "Plugin for upload your project to uCrewProjects module.",
+            "identifier": "local.stellar-creator.ucrewprojectsuploader",
             "license": "MIT",
             "name": "uCrewProjects Uploader",
             "resources": {
@@ -30,9 +30,9 @@
             "versions": [
                 {
                     "download_sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
-                    "download_size": 197121,
-                    "download_url": "https://github.com/openscopeproject/InteractiveHtmlBom/releases/download/v2.5.0/InteractiveHtmlBom_v2.5.0_pcm.zip",
-                    "install_size": 197121,
+                    "download_size": 5,
+                    "download_url": "https://raw.githubusercontent.com/stellar-creator/uCrewKiCadPlugins/main/uCrewProjectUploader/latests.zip",
+                    "install_size": 5,
                     "kicad_version": "5.1",
                     "platforms": [
                         "linux",
