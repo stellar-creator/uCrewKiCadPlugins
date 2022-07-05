@@ -12,5 +12,3 @@ class uCrewProjectsUploader(pcbnew.ActionPlugin):
     def Run(self):
         # The entry function of the plugin that is executed on user action
         print("Hello World")
-
-uCrewProjectsUploader().register() # Instantiate and register to Pcbnew

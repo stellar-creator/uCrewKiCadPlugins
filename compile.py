@@ -1,12 +1,12 @@
-import os, sys, json, hashlib, shutil, time, datetime, dateutil.parser
-from zipfile import ZipFile
+import os, sys, json, hashlib, shutil, time, datetime, dateutil.parser, zipfile
 from os.path import basename
+from shutil import make_archive
 
 pluginDirSize = 0
 
 def main():
 	print("uCrew KiCad Repository Builder v0.1")
-	buildZip('uCrewProjectUploader/latests.zip', 'uCrewProjectUploader')
+	buildZip('uCrewProjectUploader/latests.zip', 'uCrewProjectUploader/')
 	packageBuilder()
 	repositoryBuilder()
 	print("Done!")
@@ -32,21 +32,22 @@ def buildZip(file, directory):
 	print("Buld zip airchive of " + file + " in directory " + directory)
 	if os.path.exists(file):
 		os.remove(file)
-	with ZipFile('.zip', 'w') as zipObj:
-		# Iterate over all the files in directory
-		for folderName, subfolders, filenames in os.walk(directory):
-			for filename in filenames:
-				#create complete filepath of file in directory
-				filePath = os.path.join(folderName, filename)
-				# Add file to zip
-				zipObj.write(filePath, basename(filePath))	
+	"""
+	zipf = zipfile.ZipFile('.zip', 'w', zipfile.ZIP_DEFLATED)
+	# Create zip
+	for root, dirs, files in os.walk(directory):
+		for zfile in files:
+			zipf.write(os.path.join(root, zfile))
+	zipf.close()
+	"""
+	shutil.make_archive(".tmp", "zip", directory)
 	global pluginDirSize 
 	pluginDirSize = getDirSize(directory)
 	print("Directory size " + str(pluginDirSize))
-	print("Copy .zip to " + file)
-	shutil.copyfile('.zip', file)
-	if os.path.exists('.zip'):
-		os.remove('.zip')
+	print("Copy .tmp.zip to " + file)
+	shutil.copyfile('.tmp.zip', file)
+	if os.path.exists('.tmp.zip'):
+		os.remove('.tmp.zip')
 	print("Zip airchive ready")
 
 def fileSize(file):
@@ -78,6 +79,8 @@ def packageBuilder():
 	print("Save packages.json")
 	with open('packages.json', 'w') as f:
 		json.dump(packageData, f, indent=4)
+	with open('uCrewProjectUploader/metadata.json', 'w') as f:
+		json.dump(packageData['packages'][0], f, indent=4)
 
 def repositoryBuilder():
 	print("Read repository.json")

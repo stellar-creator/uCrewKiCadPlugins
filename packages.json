@@ -6,17 +6,17 @@
             "versions": [
                 {
                     "status": "stable",
-                    "download_size": 4624,
-                    "download_sha256": "c6e2702e03d554827a8c230c09aabb8824eb38fc5667ce32269a61c29acb5e48",
-                    "install_size": 4388,
-                    "download_url": "https://raw.githubusercontent.com/stellar-creator/uCrewKiCadPlugins/main/uCrewProjectUploader/latests.zip",
+                    "download_size": 6565,
+                    "download_sha256": "417264e542dbe4e32ea0ed08b58555db581ccb3dce39543b664f0edf11f6bf45",
+                    "install_size": 8594,
+                    "download_url": "http://94.51.83.132/uc_temporary/uCrewKiCadPlugins/uCrewProjectUploader/latests.zip",
                     "platforms": [
                         "linux",
                         "macos",
                         "windows"
                     ],
-                    "version": "0.1.2",
-                    "kicad_version": "5.1"
+                    "version": "0.2.0",
+                    "kicad_version": "6.0"
                 }
             ],
             "tags": [
