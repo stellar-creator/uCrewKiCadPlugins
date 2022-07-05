@@ -9,14 +9,14 @@
     "name": "uCrew Plugins Repository",
     "packages": {
         "sha256": "7e24d8fcdc191b9b6e07a788fb1cb3bb393467d9e66cecd4569968ae1ec6c2e0",
-        "update_time_utc": "2022-07-02 11:02:00",
-        "update_timestamp": 1656759720,
+        "update_time_utc": "2022-07-05 10:03:34",
+        "update_timestamp": 1656997414,
         "url": "https://raw.githubusercontent.com/stellar-creator/uCrewKiCadPlugins/main/packages.json"
     },
     "resources": {
         "sha256": "9dbed4ec2a34ba9cfb626c32f2f804a9d3abe93cc5469a94267862325ce90ca1",
-        "update_time_utc": "2022-07-02 11:01:59",
-        "update_timestamp": 1656759719,
+        "update_time_utc": "2022-07-05 09:57:21",
+        "update_timestamp": 1656997041,
         "url": "https://raw.githubusercontent.com/stellar-creator/uCrewKiCadPlugins/main/resources.zip"
     }
 }
