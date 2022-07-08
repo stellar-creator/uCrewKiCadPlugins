@@ -6,16 +6,16 @@
             "versions": [
                 {
                     "status": "stable",
-                    "download_size": 7121,
-                    "download_sha256": "5fdf60aa210e2e8a1b58605ec366f9c3efc8b64768b34b91b5f237d8a4bb51ec",
-                    "install_size": 9248,
+                    "download_size": 28511,
+                    "download_sha256": "52412a65b6239b183ef3f72efc06c41d9ef17e25e542e67b3e6eec488cf048e1",
+                    "install_size": 75973,
                     "download_url": "http://94.51.83.132/uc_temporary/uCrewKiCadPlugins/uCrewProjectUploader/latests.zip",
                     "platforms": [
                         "linux",
                         "macos",
                         "windows"
                     ],
-                    "version": "0.2.4",
+                    "version": "0.2.6",
                     "kicad_version": "6.0"
                 }
             ],

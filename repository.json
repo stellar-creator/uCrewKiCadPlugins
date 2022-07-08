@@ -8,9 +8,9 @@
     },
     "name": "uCrew Plugins Repository",
     "packages": {
-        "sha256": "65dbaf17aaa2d28cdb215fa7446e68dcf5f77dc5efd7c39db05b26062376e76c",
-        "update_time_utc": "2022-07-05 21:36:02",
-        "update_timestamp": 1651941362,
+        "sha256": "e88cc55775659cf7e0b3ff0165cfba108fcbabdd7812f8dc27c56b54e5815538",
+        "update_time_utc": "2022-07-08 00:13:03",
+        "update_timestamp": 1659813183,
         "url": "http://94.51.83.132/uc_temporary/uCrewKiCadPlugins/packages.json"
     },
     "resources": {
