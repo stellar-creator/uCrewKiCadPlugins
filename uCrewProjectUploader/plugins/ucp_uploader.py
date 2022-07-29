@@ -17,13 +17,34 @@ logger = logging.getLogger('ucp_uploader.py')
 logging.debug("Logger enabled")
 
 class Configuration():
-    def __init__(self):
+    def __init__(self, data = None):
         super(Configuration, self).__init__()
+        self.log = logging.getLogger('ucp_uploader.py')
         self.path = os.path.dirname(os.path.realpath(__file__))
         self.configurationFile = self.path + '/config.json'
+        self.data = data
+
+    def readConfigurationFile(self):
+        self.log("Read " + self.configurationFile)
+        try:
+            with open(self.configurationFile) as f:
+                self.data = data = json.load(f)
+        except Exception as e:
+            self.log.debug('Error while reading configuration file')
+            self.log.debug(e, exc_info=True)
 
     def checkAuth(self):
-        return True
+        print(self.data)
+        if self.data == None:
+            self.log.debug('Error while checking auth, data not found')
+            return False
+        else:
+            if not 'error' in self.data:
+                self.log.debug('No errors and file exists, auth accepted')
+                return True
+            else:
+                self.log.debug('Error while checking auth, user has errors')
+                return False
         
 
 class GUI(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -45,7 +66,7 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow):
         self.server = self.txtServer.text()
         self.user = self.txtLogin.text()
         self.password = self.txtPassword.text()
-        self.api = 'http://' + self.server + '/?page=uCrewProjectsUploader/api&login=' + self.user + '&password' = self.password
+        self.api = 'http://' + self.server + '/?page=uCrewProjectsUploader/api&key=ucpu&login=' + self.user + '&password=' + self.password
         self.auth()
 
     def auth(self):
@@ -54,23 +75,28 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow):
             response = urlopen(self.api)
             if response.status != 200:
                 QMessageBox.about(self, "Response error", "Server not answer")
-            data = json.loads(response.read().decode())
 
-            with open(self.configurationFile, 'w', encoding='utf-8') as f:
-                json.dump(data, f, ensure_ascii=False, indent=4)
+            self.log.debug('Data from server: ') 
+            request = response.read().decode()
+            self.log.debug(request)    
             
-            config = Configuration()
+            data = json.loads(request)
+            
+            with open(self.configurationFile, 'w', encoding='utf-8') as f:
+                f.write(request)
+            f.close()
+            
+            config = Configuration(data)
             
             if config.checkAuth():
                 QMessageBox.about(self, "Авторизация", "Вы успешно авторизованы!")
             else:
                 QMessageBox.about(self, "Авторизация", "Ошибка, неверный логин или пароль")
+
         except Exception as e:
             self.log.debug('Error while do auth')
             self.log.debug(e, exc_info=True)
-            QMessageBox.about(self, "Error", "Cant get data")
-
-
+            QMessageBox.about(self, "Ошибка", "Не верные данные")
 
 class uCrewProjectsUploader(pcbnew.ActionPlugin):
     def defaults(self):
