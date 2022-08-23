@@ -2,6 +2,7 @@ import pcbnew, os, sys, json, traceback, logging
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 from .ui import Ui_MainWindow 
+from .uiPcb import Ui_uiPcb 
 from urllib.request import urlopen
 
 logFile = os.path.dirname(os.path.realpath(__file__))
@@ -25,7 +26,7 @@ class Configuration():
         self.data = data
 
     def readConfigurationFile(self):
-        self.log("Read " + self.configurationFile)
+        self.log.debug("Read " + self.configurationFile)
         try:
             with open(self.configurationFile) as f:
                 self.data = data = json.load(f)
@@ -98,6 +99,35 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow):
             self.log.debug(e, exc_info=True)
             QMessageBox.about(self, "Ошибка", "Не верные данные")
 
+class GUIProject(QtWidgets.QMainWindow, Ui_uiPcb):
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self) 
+        self.log = logging.getLogger('ucp_uploader.py')
+        logging.debug("GUIProject Class Inited")
+        self.path = os.path.dirname(os.path.realpath(__file__))
+        self.configurationFile = self.path + '/config.json'
+        self.server = ""
+        self.user = ""
+        self.password = ""
+        self.api = 'http://' + self.server + '/?page=uCrewProjectsUploader/api&key=ucpu'
+        self.pcbs = []
+       
+
+    def getPcbsList(self):
+        url = self.api + '&param=getPcbs' 
+        self.log.debug('Try to connecting to server ' + url)
+        response = urlopen(url)
+        if response.status != 200:
+            QMessageBox.about(self, "Response error", "Server not answer")
+        self.log.debug('Data from server: ') 
+        request = response.read().decode()
+        self.log.debug(request)  
+        data = json.loads(request)
+        self.cmbPcbs.clear()
+        for pcb in data:
+            self.cmbPcbs.addItem(pcb)
+        
 class uCrewProjectsUploader(pcbnew.ActionPlugin):
     def defaults(self):
         self.name = "uCrewProjects Uploader"
@@ -107,10 +137,27 @@ class uCrewProjectsUploader(pcbnew.ActionPlugin):
         self.icon_file_name = os.path.join(os.path.dirname(__file__), 'ucp_uploader.png') # Optional, defaults to ""
 
     def Run(self):
-        self.showAthorization()
-
+        log = logging.getLogger('ucp_uploader.py')
+        # Init configuration
+        config = Configuration()
+        # Read configuration
+        config.readConfigurationFile();
+        
+        if config.checkAuth():
+            log.debug('Success, get configuration file, check project')
+            self.showProject()
+        else:
+            log.debug('Cant get configuration file, auth')
+            self.showAthorization()
+        
     def showAthorization(self):
         app = QtWidgets.QApplication(sys.argv) 
         window = GUI()
+        window.show()
+        app.exec_()
+
+    def showProject(self):
+        app = QtWidgets.QApplication(sys.argv) 
+        window = GUIProject()
         window.show()
         app.exec_()

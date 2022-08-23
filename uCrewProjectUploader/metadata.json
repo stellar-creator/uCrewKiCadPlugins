@@ -4,16 +4,16 @@
     "versions": [
         {
             "status": "stable",
-            "download_size": 36374,
-            "download_sha256": "4e3bdb8a09144732dbb04cddf0a17fae177352f29201d18ff922138fc27f98a7",
-            "install_size": 115144,
+            "download_size": 33631,
+            "download_sha256": "317e6f47383ad5b6aeaf950b1927e1688618616a90e8b235417f6b8c8986dc14",
+            "install_size": 102881,
             "download_url": "http://94.51.83.132/uc_temporary/uCrewKiCadPlugins/uCrewProjectUploader/latests.zip",
             "platforms": [
                 "linux",
                 "macos",
                 "windows"
             ],
-            "version": "0.3.5",
+            "version": "0.3.6",
             "kicad_version": "6.0"
         }
     ],
@@ -29,7 +29,7 @@
         "contact": {
             "email": "ucrew@local"
         },
-        "name": "Pavel"
+        "name": "stellar-creator"
     },
     "$schema": "https://go.kicad.org/pcm/schemas/v1",
     "identifier": "ucrew.projects.uploader",

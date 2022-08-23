@@ -1,0 +1,34 @@
+{
+    "$schema": "https://go.kicad.org/pcm/schemas/v1",
+    "author": {
+        "contact": {
+            "email": "ucrew@local"
+        },
+        "name": "stellar-creator"
+    },
+    "description": "Symbol and Footprint library for uCrewProjects PCB's module",
+    "description_full": "This library need for automatization",
+    "identifier": "ucrew.projects.library",
+    "license": "GPL",
+    "name": "uCrewProjectsLibrary",
+    "resources": {
+        "Wiki": "https://github.com/stellar-creator/uCrew/wiki",
+        "Github": "https://github.com/stellar-creator/uCrew"
+    },
+    "tags": [
+        "footprints",
+        "symbols"
+    ],
+    "type": "library",
+    "versions": [
+        {
+            "download_sha256": "0e02e7e28b4f66076ae4cc771413c076257ee96128c264371005ea349c8b4960",
+            "download_size": 9533,
+            "download_url": "http://94.51.83.132/uc_temporary/uCrewKiCadPlugins/uCrewProjectLibrary/latests.zip",
+            "install_size": 25556,
+            "kicad_version": "6.0",
+            "status": "stable",
+            "version": "1.1"
+        }
+    ]
+}

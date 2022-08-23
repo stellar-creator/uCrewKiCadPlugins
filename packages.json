@@ -6,16 +6,16 @@
             "versions": [
                 {
                     "status": "stable",
-                    "download_size": 36374,
-                    "download_sha256": "4e3bdb8a09144732dbb04cddf0a17fae177352f29201d18ff922138fc27f98a7",
-                    "install_size": 115144,
+                    "download_size": 33631,
+                    "download_sha256": "317e6f47383ad5b6aeaf950b1927e1688618616a90e8b235417f6b8c8986dc14",
+                    "install_size": 102881,
                     "download_url": "http://94.51.83.132/uc_temporary/uCrewKiCadPlugins/uCrewProjectUploader/latests.zip",
                     "platforms": [
                         "linux",
                         "macos",
                         "windows"
                     ],
-                    "version": "0.3.5",
+                    "version": "0.3.6",
                     "kicad_version": "6.0"
                 }
             ],
@@ -31,7 +31,7 @@
                 "contact": {
                     "email": "ucrew@local"
                 },
-                "name": "Pavel"
+                "name": "stellar-creator"
             },
             "$schema": "https://go.kicad.org/pcm/schemas/v1",
             "identifier": "ucrew.projects.uploader",
@@ -41,6 +41,40 @@
                 "Github": "https://github.com/stellar-creator/uCrew"
             },
             "name": "uCrewProjects Uploader"
+        },
+        {
+            "$schema": "https://go.kicad.org/pcm/schemas/v1",
+            "author": {
+                "contact": {
+                    "email": "ucrew@local"
+                },
+                "name": "stellar-creator"
+            },
+            "description": "Symbol and Footprint library for uCrewProjects PCB's module",
+            "description_full": "This library need for automatization",
+            "identifier": "ucrew.projects.library",
+            "license": "GPL",
+            "name": "uCrewProjectsLibrary",
+            "resources": {
+                "Wiki": "https://github.com/stellar-creator/uCrew/wiki",
+                "Github": "https://github.com/stellar-creator/uCrew"
+            },
+            "tags": [
+                "footprints",
+                "symbols"
+            ],
+            "type": "library",
+            "versions": [
+                {
+                    "download_sha256": "0e02e7e28b4f66076ae4cc771413c076257ee96128c264371005ea349c8b4960",
+                    "download_size": 9533,
+                    "download_url": "http://94.51.83.132/uc_temporary/uCrewKiCadPlugins/uCrewProjectLibrary/latests.zip",
+                    "install_size": 25556,
+                    "kicad_version": "6.0",
+                    "status": "stable",
+                    "version": "1.1"
+                }
+            ]
         }
     ]
 }

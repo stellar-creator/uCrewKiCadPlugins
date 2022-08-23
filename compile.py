@@ -3,10 +3,12 @@ from os.path import basename
 from shutil import make_archive
 
 pluginDirSize = 0
+libraryDirSize = 0
 
 def main():
 	print("uCrew KiCad Repository Builder v0.1")
-	buildZip('uCrewProjectUploader/latests.zip', 'uCrewProjectUploader/')
+	buildZip('uCrewProjectUploader/latests.zip', 'uCrewProjectUploader/', 'plugin')
+	buildZip('uCrewProjectLibrary/latests.zip', 'uCrewProjectLibrary/', 'library')
 	packageBuilder()
 	repositoryBuilder()
 	print("Done!")
@@ -28,21 +30,21 @@ def sha256(filename):
 			sha256_hash.update(byte_block)
 		return sha256_hash.hexdigest()
 
-def buildZip(file, directory):
+def buildZip(file, directory, module):
 	print("Buld zip airchive of " + file + " in directory " + directory)
 	if os.path.exists(file):
 		os.remove(file)
-	"""
-	zipf = zipfile.ZipFile('.zip', 'w', zipfile.ZIP_DEFLATED)
-	# Create zip
-	for root, dirs, files in os.walk(directory):
-		for zfile in files:
-			zipf.write(os.path.join(root, zfile))
-	zipf.close()
-	"""
+
 	shutil.make_archive(".tmp", "zip", directory)
+	
 	global pluginDirSize 
-	pluginDirSize = getDirSize(directory)
+	global libraryDirSize 
+
+	if module == 'plugin':
+		pluginDirSize = getDirSize(directory)
+	else:
+		libraryDirSize = getDirSize(directory)
+
 	print("Directory size " + str(pluginDirSize))
 	print("Copy .tmp.zip to " + file)
 	shutil.copyfile('.tmp.zip', file)
@@ -77,10 +79,27 @@ def packageBuilder():
 	print("New hash is " + packageData['packages'][0]['versions'][0]['download_sha256'])
 	print("File size is " + str(packageData['packages'][0]['versions'][0]['download_size']))
 	print("Save packages.json")
-	with open('packages.json', 'w') as f:
-		json.dump(packageData, f, indent=4)
+	#with open('packages.json', 'w') as f:
+	#	json.dump(packageData, f, indent=4)
 	with open('uCrewProjectUploader/metadata.json', 'w') as f:
 		json.dump(packageData['packages'][0], f, indent=4)
+
+	# Change library
+	print("Current hash is " + packageData['packages'][1]['versions'][0]['download_sha256'])
+	print("Current size is " + str(packageData['packages'][1]['versions'][0]['download_size']))
+	# Change hash
+	global libraryDirSize
+	packageData['packages'][1]['versions'][0]['download_sha256'] = sha256('uCrewProjectLibrary/latests.zip')
+	packageData['packages'][1]['versions'][0]['download_size'] = int(fileSize('uCrewProjectLibrary/latests.zip'))
+	packageData['packages'][1]['versions'][0]['install_size'] = libraryDirSize
+
+	print("New hash is " + packageData['packages'][1]['versions'][0]['download_sha256'])
+	print("File size is " + str(packageData['packages'][1]['versions'][0]['download_size']))
+	print("Save packages.json")
+	with open('packages.json', 'w') as f:
+		json.dump(packageData, f, indent=4)
+	with open('uCrewProjectLibrary/metadata.json', 'w') as f:
+		json.dump(packageData['packages'][1], f, indent=4)
 
 def repositoryBuilder():
 	print("Read repository.json")
