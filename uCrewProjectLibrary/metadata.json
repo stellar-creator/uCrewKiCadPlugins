@@ -22,10 +22,10 @@
     "type": "library",
     "versions": [
         {
-            "download_sha256": "21c2e8e31b22e543066e811fecc2259f85a70b419ca5b4b44b84b31a21276ec6",
-            "download_size": 25670,
+            "download_sha256": "d5307cc7909fdee9349630b32a6622584db020cfb0d5248cfcda6ad8ad696d46",
+            "download_size": 77975,
             "download_url": "http://94.51.83.132/uc_temporary/uCrewKiCadPlugins/uCrewProjectLibrary/latests.zip",
-            "install_size": 111494,
+            "install_size": 337351,
             "kicad_version": "6.0",
             "status": "stable",
             "version": "1.1"
