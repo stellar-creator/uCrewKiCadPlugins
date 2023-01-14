@@ -1,0 +1,60 @@
+(footprint "2EDGV-5.08-02P" (version 20211014) (generator pcbnew)
+  (layer "F.Cu")
+  (tedit 0)
+  (property "Sheetfile" "TB0018 - UCM Main Board.kicad_sch")
+  (property "Sheetname" "")
+  (attr through_hole)
+  (fp_text reference "J7" (at 0 -5.08 unlocked) (layer "F.SilkS") hide
+    (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp acd2edc7-840a-46a8-a420-f0f969fe3185)
+  )
+  (fp_text value "2EDGV-5.08-02P" (at 0 -5.715 unlocked) (layer "F.Fab")
+    (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp b3ac98ae-20ab-4bd7-80bf-ea8ef96b3e8c)
+  )
+  (fp_text user "**REF" (at 0 -7.62 unlocked) (layer "F.Fab")
+    (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp 5f4edb01-1b47-4367-8f76-cfc5f4625336)
+  )
+  (fp_line (start 1.845 -3.175) (end 1.845 -4) (layer "F.SilkS") (width 0.2) (tstamp 009b6043-4326-4e59-a630-b3e92cd0db06))
+  (fp_line (start 1.845 -3.175) (end 3.115 -3.175) (layer "F.SilkS") (width 0.2) (tstamp 1e0aead7-f9e5-429f-9290-cfadecb1ada4))
+  (fp_line (start -3.235 -3.175) (end -3.235 -4) (layer "F.SilkS") (width 0.2) (tstamp 2556df38-560f-4a91-9636-e281e98af955))
+  (fp_line (start -3.235 -3.175) (end -1.965 -3.175) (layer "F.SilkS") (width 0.2) (tstamp 444e1e29-993f-45d3-aee8-e6447b6d65ad))
+  (fp_line (start 5.02 -4.024) (end 5.02 4.04) (layer "F.SilkS") (width 0.2) (tstamp 5e2f7386-ad2b-4b94-be72-158fa37307f5))
+  (fp_line (start -1.965 -3.175) (end -1.965 -4) (layer "F.SilkS") (width 0.2) (tstamp 87a75114-b3fb-4ee7-a896-426205a50a8e))
+  (fp_line (start -5.14 4.04) (end 5.02 4.04) (layer "F.SilkS") (width 0.2) (tstamp 95bf7bbc-440b-4118-bd72-f32e6c0c316c))
+  (fp_line (start -5.14 -4.04) (end 5.02 -4.04) (layer "F.SilkS") (width 0.2) (tstamp ce418104-03d3-4481-bc5d-089c07486307))
+  (fp_line (start 3.115 -3.175) (end 3.115 -4) (layer "F.SilkS") (width 0.2) (tstamp d012122d-14b1-4a85-bb6c-c9e450467502))
+  (fp_line (start -5.14 -4.04) (end -5.14 4.04) (layer "F.SilkS") (width 0.2) (tstamp d9b51225-f0a3-43b3-b372-7470bebcf71e))
+  (fp_arc (start -2.6 3.419974) (mid -3.498025 3.048) (end -3.869999 2.149975) (layer "F.SilkS") (width 0.2) (tstamp 91d96c95-a918-44fb-bd3a-e5c5e3a769f9))
+  (fp_arc (start 2.48 3.419974) (mid 1.581975 3.048) (end 1.210001 2.149975) (layer "F.SilkS") (width 0.2) (tstamp 9c7a5e8a-5932-4b93-b925-556f8e92e42c))
+  (fp_arc (start -1.329999 2.149975) (mid -1.701976 3.047999) (end -2.6 3.419974) (layer "F.SilkS") (width 0.2) (tstamp a0aa2e57-a4c5-4227-8b37-997657de5b81))
+  (fp_arc (start 3.750001 2.149975) (mid 3.378024 3.047999) (end 2.48 3.419974) (layer "F.SilkS") (width 0.2) (tstamp cc337b19-5afb-49ed-895e-be799fef82bc))
+  (pad "1" thru_hole circle (at -2.6 0 90) (size 3 3) (drill 1.5) (layers *.Cu *.Mask) (tstamp 30fbbd14-0617-40b1-9f82-cc0be6abe3dd))
+  (pad "2" thru_hole circle (at 2.48 0 90) (size 3 3) (drill 1.5) (layers *.Cu *.Mask) (tstamp 6f98095c-b132-4de0-b05b-e33f00124cb5))
+  (group "" (id 745ba864-2284-4694-9f15-f33ad908436d)
+    (members
+      009b6043-4326-4e59-a630-b3e92cd0db06
+      1e0aead7-f9e5-429f-9290-cfadecb1ada4
+      2556df38-560f-4a91-9636-e281e98af955
+      30fbbd14-0617-40b1-9f82-cc0be6abe3dd
+      444e1e29-993f-45d3-aee8-e6447b6d65ad
+      5e2f7386-ad2b-4b94-be72-158fa37307f5
+      6f98095c-b132-4de0-b05b-e33f00124cb5
+      87a75114-b3fb-4ee7-a896-426205a50a8e
+      91d96c95-a918-44fb-bd3a-e5c5e3a769f9
+      95bf7bbc-440b-4118-bd72-f32e6c0c316c
+      9c7a5e8a-5932-4b93-b925-556f8e92e42c
+      a0aa2e57-a4c5-4227-8b37-997657de5b81
+      cc337b19-5afb-49ed-895e-be799fef82bc
+      ce418104-03d3-4481-bc5d-089c07486307
+      d012122d-14b1-4a85-bb6c-c9e450467502
+      d9b51225-f0a3-43b3-b372-7470bebcf71e
+    )
+  )
+  (model "${KIPRJMOD}/Additional/3D models/2EDGV-5.08-04P-14-00AH.STEP"
+    (offset (xyz 10.15 -3.75 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz -90 0 180))
+  )
+)
